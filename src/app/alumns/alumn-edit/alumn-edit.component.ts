@@ -74,7 +74,7 @@ export class AlumnEditComponent implements OnInit, OnDestroy {
 
     this._apiAlumnService.updateAlumn(this.alumnForm.value).subscribe(res => {
 
-      this._notifications.create('Success', 'Alumno creado con éxito', NotificationType.Error, { theClass: 'error', timeOut: 4000, showProgressBar: false });
+      this._notifications.create('Success', 'Alumno creado con éxito', NotificationType.Success, { theClass: 'success', timeOut: 4000, showProgressBar: false });
       this._router.navigate(['alumns']);
 
     }, (error) => {

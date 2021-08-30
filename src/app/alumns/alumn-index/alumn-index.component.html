@@ -1,1 +1,39 @@
-<p>alumn-index works!</p>
+<div class="row">
+  <div class="col">
+    <ng-container *ngIf="(alumnsList$ | async)?.length! > 0; else elseAlumns">
+      <table class="table table-hover bg-light">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Comentarios</th>
+            <th scope="col">¿Activo?</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of (alumnsList$ | async)">
+            <th scope="row">{{item.name}}</th>
+            <td>{{item.age}}</td>
+            <td>{{item.birthday}}</td>
+            <td>{{item.remarks}}</td>
+            <td>{{item.isActive ? 'Sí' : 'No'}}</td>
+            <td>
+              <button mat-mini-fab color="primary" [routerLink]="['edit/', item.alumnId]">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab class="ml-2" color="warn" type="button" (click)="onDelete(item.alumnId)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+    <ng-template #elseAlumns>
+      <p class="text-center">Sin Alumnos Regitrados</p>
+    </ng-template>
+  </div>
+</div>
+<simple-notifications></simple-notifications>

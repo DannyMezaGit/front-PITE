@@ -31,4 +31,8 @@ export class ApiAlumnService {
     return this._http.put<ApiResponse<Alumn>>(this._apiURL, alumn);
   }
 
+  deleteAlumn(id: number): Observable<ApiResponse<Alumn>> {
+    return this._http.delete<ApiResponse<Alumn>>(`${this._apiURL}/${id}`)
+  }
+
 }

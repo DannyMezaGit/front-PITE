@@ -11,6 +11,8 @@ export class AlumnSharedService {
     remarks: '',
     isActive: true
   });
+
+  alumnsList$: BehaviorSubject<Alumn[]> = new BehaviorSubject<Alumn[]>([]);
   constructor() { }
 
   get getAlumn() {
@@ -23,6 +25,13 @@ export class AlumnSharedService {
 
   set setNewAlumn(alumn: Alumn) {
     this.alumn$.next(alumn);
+  }
+  get getAlumnsList$() {
+    return this.alumnsList$.asObservable();
+  }
+
+  set setAlumnsList(alumns: Alumn[]) {
+    this.alumnsList$.next(alumns);
   }
 
 }

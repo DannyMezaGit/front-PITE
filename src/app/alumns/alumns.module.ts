@@ -24,6 +24,7 @@ import { AlumnSharedService } from './services/alumn-shared.service';
     ReactiveFormsModule,
     MaterialModule,
     SimpleNotificationsModule.forRoot(),
+
   ],
   providers: [AlumnSharedService]
 })
