@@ -1,5 +1,5 @@
-export class ApiResponse<T> {
-  success: number | undefined;
-  message: string | undefined;
-  data: T | undefined;
+export interface ApiResponse<T> {
+  success: number;
+  message: string;
+  data: T;
 }

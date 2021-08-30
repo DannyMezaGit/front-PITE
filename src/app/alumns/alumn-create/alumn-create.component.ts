@@ -18,9 +18,7 @@ export class AlumnCreateComponent implements OnInit {
     private _router: Router,
     private _notifications: NotificationsService,
     private _apiAlumnService: ApiAlumnService,
-  ) { }
-
-  ngOnInit(): void {
+  ) {
     this.alumnForm = this._fb.group({
 
       alumnId: [0],
@@ -31,6 +29,10 @@ export class AlumnCreateComponent implements OnInit {
       isActive: [true],
 
     })
+   }
+
+  ngOnInit(): void {
+
   }
 
   onSubmit() {
@@ -46,7 +48,6 @@ export class AlumnCreateComponent implements OnInit {
 
       this._notifications.create('Success', 'Alumno creado con éxito', NotificationType.Error, { theClass: 'error', timeOut: 4000, showProgressBar: false });
       this._router.navigate(['alumns']);
-
 
     }, (error) => {
       this._notifications.create('Error', error.message, NotificationType.Error, { theClass: 'error', timeOut: 4000, showProgressBar: false });

@@ -27,4 +27,8 @@ export class ApiAlumnService {
     return this._http.post<ApiResponse<Alumn>>(this._apiURL, alumn);
   }
 
+  updateAlumn(alumn: Alumn): Observable<ApiResponse<Alumn>> {
+    return this._http.put<ApiResponse<Alumn>>(this._apiURL, alumn);
+  }
+
 }

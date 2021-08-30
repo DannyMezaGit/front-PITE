@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { AlumnEditComponent } from './alumn-edit/alumn-edit.component';
+import { AlumnSharedService } from './services/alumn-shared.service';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AlumnEditComponent } from './alumn-edit/alumn-edit.component';
     ReactiveFormsModule,
     MaterialModule,
     SimpleNotificationsModule.forRoot(),
-  ]
+  ],
+  providers: [AlumnSharedService]
 })
 export class AlumnsModule { }

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Ed alumno</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form class="g-3" (submit)="onSubmit()" [formGroup]="alumnForm">
+            <div class="row">
+                <mat-form-field appearance="legacy" class="col-6 mt-3">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput  formControlName="name">
+                  <mat-error *ngIf="alumnForm.get('name')?.hasError('required')">* El campo es obligatorio</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="legacy" class="col-6 mt-3">
+                <mat-label>Edad</mat-label>
+                <input matInput type="number" formControlName="age">
+                <mat-error *ngIf="alumnForm.get('age')?.hasError('required')">* El campo es obligatorio</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="legacy" class="col-6 mt-3">
+                <mat-label>Cumpleaños</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthday">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="alumnForm.get('birthday')?.hasError('required')">* El campo es obligatorio</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="legacy" class="col-6 mt-3">
+                <mat-label>Comentarios</mat-label>
+                <textarea matInput formControlName="remarks"></textarea>
+                <mat-error *ngIf="alumnForm.get('remarks')?.hasError('required')">* El campo es obligatorio</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <div class="col-6 mt-3">
+                <mat-checkbox name="isActive" formControlName="isActive">Está Activo</mat-checkbox>
+              </div>
+            </div>
+           <div class="row">
+            <div class="col-6 mt-3">
+              <button mat-raised-button color="primary" type="submit">Guardar</button>
+            </div>
+           </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
