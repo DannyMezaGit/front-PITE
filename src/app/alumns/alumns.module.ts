@@ -4,16 +4,25 @@ import { CommonModule } from '@angular/common';
 import { AlumnsRoutingModule } from './alumns.routing';
 import { AlumnCreateComponent } from './alumn-create/alumn-create.component';
 import { AlumnIndexComponent } from './alumn-index/alumn-index.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { AlumnEditComponent } from './alumn-edit/alumn-edit.component';
 
 
 @NgModule({
   declarations: [
     AlumnCreateComponent,
-    AlumnIndexComponent
+    AlumnIndexComponent,
+    AlumnEditComponent
   ],
   imports: [
     CommonModule,
-    AlumnsRoutingModule
+    AlumnsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    SimpleNotificationsModule.forRoot(),
   ]
 })
 export class AlumnsModule { }

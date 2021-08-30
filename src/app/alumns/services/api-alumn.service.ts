@@ -11,7 +11,7 @@ import { Alumn } from '../alumn.model';
 
 export class ApiAlumnService {
 
-  private _apiURL = environment.apiUrl + '/Alumns';
+  private _apiURL = environment.apiUrl + '/Alumn';
 
   constructor(private _http: HttpClient) { }
 

@@ -1,12 +1,12 @@
 <mat-toolbar color="primary">
-  <span>
-    <a mat-button  routerLink='alumns'>
+  <span class="mr-2">
+    <button mat-raised-button type="button" [routerLink]="['alumns']">
       Alumnos <mat-icon> <span class="material-icons-outlined">  home </span> </mat-icon>
-    </a>
+    </button>
   </span>
   <span>
-    <a mat-button routerLink='alumns/new'>
+    <button mat-raised-button type="button" [routerLink]="['alumns/new']">
       Nuevo Alumno <mat-icon> <span class="material-icons-outlined"> person_add_alt </span> </mat-icon>
-    </a>
+    </button>
   </span>
 </mat-toolbar>
